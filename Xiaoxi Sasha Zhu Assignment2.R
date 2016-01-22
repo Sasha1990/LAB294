@@ -6,6 +6,13 @@ XiaoxiSashaZhuAssignment2 <- list(
   studentID<- 1505138
 )
 
+
+
+
+
+
+
+
 ##problem 1##
 install.packages("RCurl")
 library(RCurl)
