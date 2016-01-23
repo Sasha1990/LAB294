@@ -6,13 +6,6 @@ XiaoxiSashaZhuAssignment2 <- list(
   studentID<- 1505138
 )
 
-
-
-
-
-
-
-
 ##problem 1##
 install.packages("RCurl")
 library(RCurl)
@@ -63,8 +56,18 @@ arr1<-arr[2,,]
 XiaoxiSashaZhuAssignment2$s3d <- arr1[2,]
 XiaoxiSashaZhuAssignment2$s3e<-paste(arr[3,2,3],arr[3,3,1],arr[1,1,1],sep="")
 
+##problem 4##
+library(foreign)
+org<- read.dta("https://github.com/EconomiCurtis/econ294_2015/raw/master/data/org_example.dta")
+
+sort(unique(org$year))
+sort(unique(org$month))
+sort(unique(org$educ))
+XiaoxiSashaZhuAssignment2$s4 <- aggregate( org$rw, list(year=org$year, month=org$month, educ=org$educ), mean, na.rm=TRUE )
+View(XiaoxiSashaZhuAssignment2$s4)
+
 save(XiaoxiSashaZhuAssignment2, 
-     file = "Desktop/XiaoxiSashaZhuAssignment.RData")
+     file = "XiaoxiSashaZhuAssignment.RData")
       
 
 
